@@ -30,9 +30,17 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String panjang = edtPanjang.getText().toString().trim();
                 String lebar = edtLebar.getText().toString().trim();
+                double p,l;
 
-                double p = Double.parseDouble(panjang);
-                double l = Double.parseDouble(lebar);
+                try {
+                    p = Double.parseDouble(panjang);
+                    l = Double.parseDouble(lebar);
+                }
+                catch (NumberFormatException ex)
+                {
+                    p = 0;
+                    l = 0;
+                }
 
                 double luas = p * l;
 
